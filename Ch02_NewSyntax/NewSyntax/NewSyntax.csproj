@@ -1,0 +1,130 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <ProjectGuid>{C079B986-0C67-42EC-AFB8-20360B86DB0A}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <OutputPath>bin</OutputPath>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <DebugType>full</DebugType>
+    <DebugSymbols>true</DebugSymbols>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <OldToolsVersion>4.0</OldToolsVersion>
+    <UseIISExpress>true</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UpgradeBackupLocation />
+  </PropertyGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <PropertyGroup>
+    <RootNamespace>NewSyntax</RootNamespace>
+  </PropertyGroup>
+  <ItemGroup>
+    <TypeScriptCompile Include="StrongTyping.ts" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Functions.min.js">
+      <DependentUpon>Functions.ts</DependentUpon>
+    </Content>
+    <Content Include="SimpleWebSocket.min.js">
+      <DependentUpon>SimpleWebSocket.ts</DependentUpon>
+    </Content>
+    <Content Include="StrongTyping.min.js">
+      <DependentUpon>StrongTyping.ts</DependentUpon>
+    </Content>
+    <TypeScriptCompile Include="SimpleWebSocket.ts" />
+    <TypeScriptCompile Include="Arrays.ts" />
+    <Content Include="Arrays.js">
+      <DependentUpon>Arrays.ts</DependentUpon>
+    </Content>
+    <TypeScriptCompile Include="BasicInheritance.ts" />
+    <TypeScriptCompile Include="Arrow.ts" />
+    <Content Include="Arrow.js">
+      <DependentUpon>Arrow.ts</DependentUpon>
+    </Content>
+    <Content Include="BasicInheritance.js">
+      <DependentUpon>BasicInheritance.ts</DependentUpon>
+    </Content>
+    <Content Include="Classes.js">
+      <DependentUpon>SimpleWebSocket.ts</DependentUpon>
+    </Content>
+    <TypeScriptCompile Include="ECMAFeatures.ts" />
+    <TypeScriptCompile Include="ComplexWebSocket.ts" />
+    <Content Include="ComplexWebSocket.js">
+      <DependentUpon>ComplexWebSocket.ts</DependentUpon>
+    </Content>
+    <Content Include="ECMAFeatures.js">
+      <DependentUpon>ECMAFeatures.ts</DependentUpon>
+    </Content>
+    <TypeScriptCompile Include="file1.ts" />
+    <Content Include="file1.js">
+      <DependentUpon>file1.ts</DependentUpon>
+    </Content>
+    <TypeScriptCompile Include="Functions.ts" />
+    <Content Include="Functions.js">
+      <DependentUpon>Functions.ts</DependentUpon>
+    </Content>
+    <TypeScriptCompile Include="Modules\SimpleWebSocket.ts" />
+    <TypeScriptCompile Include="Interfaces\interfaces.ts" />
+    <Content Include="Interfaces\interfaces.js">
+      <DependentUpon>interfaces.ts</DependentUpon>
+    </Content>
+    <Content Include="Modules\BusinessLogic.js">
+      <DependentUpon>SimpleWebSocket.ts</DependentUpon>
+    </Content>
+    <TypeScriptCompile Include="Modules\ComplexWebSocket.ts" />
+    <Content Include="Modules\ComplexWebSocket.js">
+      <DependentUpon>ComplexWebSocket.ts</DependentUpon>
+    </Content>
+    <TypeScriptCompile Include="Modules\globalaccess.ts" />
+    <Content Include="Modules\globalaccess.js">
+      <DependentUpon>globalaccess.ts</DependentUpon>
+    </Content>
+    <Content Include="Modules\SimpleWebSocket.js">
+      <DependentUpon>SimpleWebSocket.ts</DependentUpon>
+    </Content>
+    <Content Include="SimpleWebSocket.js">
+      <DependentUpon>SimpleWebSocket.ts</DependentUpon>
+    </Content>
+    <Content Include="StrongTyping.js">
+      <DependentUpon>StrongTyping.ts</DependentUpon>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Character.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="lib\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>0</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:58175/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Target Name="BeforeBuild">
+    <Exec Command="&quot;$(PROGRAMFILES)\Microsoft SDKs\TypeScript\0.8.0.0\tsc&quot; @(TypeScriptCompile ->'&quot;%(fullpath)&quot;', ' ')" />
+  </Target>
+</Project>
